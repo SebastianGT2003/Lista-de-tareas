@@ -1,7 +1,17 @@
-class task {
+class TaskModel {
   late String description;
-  late bool taskCompleted;
-  late List<task> listTask;
+  late List<TaskModel> listTask;
+  bool taskCompleted = false;
 
-  task({required this.description, required this.taskCompleted});
+  TaskModel({required this.description, required this.taskCompleted});
+
+  TaskModel.emty() {
+    this.description = "";
+    this.taskCompleted = false;
+    this.listTask = [
+      TaskModel(description: "description", taskCompleted: false),
+      TaskModel(description: "description1", taskCompleted: false),
+      TaskModel(description: "description2", taskCompleted: false),
+    ];
+  }
 }
